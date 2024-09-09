@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page | UI Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            background: url("./img-3.jpg") no-repeat center center;
+            background-size: cover;
+            padding: 10px; 
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 800px;   
+            max-height: 100%;
+            background: #f0f0f0;
+            border: 17px solid #f0f0f0;
+            border-radius: 30px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            color: #fff;
+            background: url("./img-3.jpg") no-repeat center center;
+            background-size: cover;
+            position: relative;
+            padding: 20px;
+            border-radius: 30px 0 0 30px;
+            width: 100%;
+            box-sizing: border-box;
+            min-height: 175px; 
+        }
+
+        .inner-content {
+            transform: skew(-2deg);
+            padding: 10px;
+            position: relative;
+            text-align: center;
+        }
+
+        .left-section h2 {
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+        .left-section .profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .left-section .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .right-section {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #f0f0f0;
+            border-radius: 0 30px 30px 0;
+            width: 100%;
+        }
+
+        .right-section h1 {
+            margin: 0;
+            font-size: 35px;
+            font-weight: 700;
+        }
+
+        .right-section p {
+            margin: 0 0 10px;
+            color: #666;
+        }
+
+        .input-group {
+            margin-bottom: 8px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 30px; 
+            border: 1px solid #ddd;
+            outline: none;
+            font-size: 20px;
+            box-sizing: border-box;
+        }
+
+        .input-group input:focus {
+            border-color: #ff4b5c;
+        }
+
+        .forgot-password {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .forgot-password-link {
+            color: #151340;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .forgot-password-link:hover {
+            text-decoration: underline;
+            color: #ff4b5c;
+        }
+
+        .button {
+            background-color: #446879;
+            color: #fff;
+            padding: 9px;
+            text-align: center;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 10px;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+            font-weight: 600;
+            font-size: 26px;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .button:hover {
+            background-color: #5b9bee;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+        }
+.button span {
+    font-size: 24px; /* Increase the font size of the text */
+    font-weight: bold; /* Make the text bold */
+}
+
+        .rishika-ui {
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            margin-top: auto; 
+            margin-right: auto;
+        }
+
+        .rishika-ui img {
+            width: 60px; 
+            height: 60px; 
+            border-radius: 50%;
+        }
+
+        .rishika-ui h1 {
+            font-size: 15px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .company-logo {
+            position: absolute;
+            top: 20px;
+            left: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .company-logo .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .company-logo .company-name {
+            font-size: 18px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        @media (min-width: 769px) {
+            .container {
+                flex-direction: row;
+            }
+            .left-section,
+            .right-section {
+                width: 50%;
+                border-radius: 30px 0 0 30px; 
+                flex-basis: 50%;
+            }
+
+            .rishika-ui {
+                flex-direction: row;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+
+            .left-section,
+            .right-section {
+                border-radius: 30px; 
+                padding: 20px;
+            }
+
+            .left-section {
+                margin-bottom: 20px;
+            }
+
+            .right-section h1 {
+                font-size: 28px;
+            }
+
+            .input-group input {
+                font-size: 18px;
+                padding: 10px;
+            }
+
+            .button {
+                font-size: 18px;
+                padding: 15px;
+            }
+
+            .rishika-ui h1 {
+                font-size: 16px;
+            }
+
+            
+            .rishika-ui img {
+                width: 50px; 
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px; 
+            }
+
+            .left-section,
+            .right-section {
+                padding: 10px;
+            }
+
+            .right-section h1 {
+                font-size: 24px;
+            }
+
+            .input-group input {
+                font-size: 16px;
+                padding: 8px; 
+            }
+
+            .button {
+                font-size: 16px;
+                padding: 12px;
+            }
+
+           
+            .rishika-ui img {
+                width: 30px;
+                height: 30px;
++
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="company-logo">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.0jl9haemnq0P4eYzzrfNOgHaGw&pid=Api" alt="Company Logo" class="logo">
+        <span class="company-name">XYZ</span>
+    </div>
+
+    <div class="container">
+        <div class="left-section">
+            <div class="inner-content">
+                <div class="heading"></div>
+                <div class="profile"></div>
+            </div>
+            <div class="rishika-ui">
+                <img src="https://up.yimg.com/ib/th?id=OIP.GHGGLYe7gDfZUzF_tElxiQHaHa&pid=Api&rs=1&c=1&qlt=95&w=117&h=117" alt="Profile Image">
+                <h1>Rishika.ui</h1>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="right-section-main">
+                <h1>Hi Developer!</h1>
+                <p>Welcome to frontenddev</p>
+                <div class="input-group">
+                    <input type="text" placeholder="Email">
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password">
+                </div>
+                <div class="forgot-password">
+                    <a href="#" class="forgot-password-link">Forgot Password?</a>
+                </div>
+                <div class="btn">
+                    <a href="#" class="button">Login</a>
+                </div>
+                <div class="btn">
+                    <a href="#" style="color: #151340; text-decoration: none; margin-top: 20px; display: block; font-size: 15px;">
+                        Don't have an account? Sign up now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
